@@ -218,40 +218,39 @@
     <!--==============================
       Hero Area
     ==============================-->
-   <section>
-    <div style="background-color: #fff;" class="container py-3">
-        <div class="row justify-content-center ">
-            <div class="col-md-6">
-                <h1>دكتور مصطفي صابر </h1>
-                <p>إستشاري طب الأسرة وعضو الكلية الملكية لأطباءالأسرة لندن, بكالوريوس الطب والجراحة جامعة القاهرة (كلية الطب قصر العيني) MRCGP UK , MRCGP int .</p>
-                <div class="mt-5">
-                    <h4 class="m-0">تلقي الخدمة الطبية.</h4>
-                    <p  class="m-0">اتصل بنا على:01141734776 </p>
+    <section>
+        <div style="background-color: #fff;" class="container py-3">
+            <div class="row justify-content-center ">
+                <div class="col-md-6" id="image-container">
+                    <h1>دكتور مصطفي صابر </h1>
+                    <p>إستشاري طب الأسرة وعضو الكلية الملكية لأطباء الأسرة لندن, بكالوريوس الطب والجراحة جامعة القاهرة (كلية الطب قصر العيني) MRCGP UK , MRCGP int .</p>
+                    <div class="mt-5">
+                        <h4 class="m-0">تلقي الخدمة الطبية.</h4>
+                        <p class="m-0">اتصل بنا على: 01141734776 </p>
+                    </div>
+                    <div class="d-flex align-items-center mb-5 mt-2">
+                        <button onclick="window.open('https://wa.me/201141734776', '_blank');" style="background-color: #2EA6F7; border-radius: 50px; color: #fff; width: 200px;" class="btn py-3 px-1">
+                            اتصل الآن <i class="fas fa-arrow-alt-circle-left ms-3"></i>
+                        </button>
+    
+                        <button onclick="document.getElementById('section-id').scrollIntoView({ behavior: 'smooth' });" 
+                            style="background-color: #002261; border-radius: 50px; color: #fff; width: 200px ;" 
+                            class="btn py-3 px-1 mx-2">
+                            تحديد موعد <i class="fas fa-arrow-alt-circle-left ms-3"></i>
+                        </button>
+                    </div>
+                    <div class="d-flex py-2">
+                        <img class="mx-2 clickable" src="assets/img/hero/image (1).svg" alt="" width="94px" height="92px" onclick="changeImage('assets/img/hero/image (1).svg')">
+                        <img class="mx-2 clickable" src="assets/img/hero/image (2).svg" alt="" width="94px" height="92px" onclick="changeImage('assets/img/hero/image (2).svg')">
+                        <img style="border-radius:10px ; height: 92px;" class="mx-2 clickable" src="assets/img/hero/drmostafa2.jpg" alt="" width="94px" onclick="changeImage('assets/img/hero/drmostafa2.jpg')">
+                    </div>
                 </div>
-                <div class="d-flex align-items-center mb-5 mt-2">
-                    <button onclick="window.open('https://wa.me/201141734776', '_blank');" style="background-color: #2EA6F7; border-radius: 50px; color: #fff; width: 200px;" class="btn py-3 px-1">
-                        اتصل الآن <i class="fas fa-arrow-alt-circle-left ms-3"></i>
-                      </button>
-                       
-                      <button onclick="document.getElementById('section-id').scrollIntoView({ behavior: 'smooth' });" 
-                      style="background-color: #002261; border-radius: 50px; color: #fff; width: 200px ;" 
-                      class="btn py-3 px-1 mx-2">
-                  تحديد موعد <i class="fas fa-arrow-alt-circle-left ms-3"></i>
-                    </button>
-              
+                <div class="col-md-6">
+                    <img id="main-image" style="border-radius:20px ;" src="assets/img/hero/drmostafajpg.jpg" class="w-100" alt="">
                 </div>
-                <div class="d-flex py-2">
-                    <img class="mx-2" src="assets/img/hero/image (1).svg" alt="" width="94px" height="92px">
-                    <img class="mx-2" src="assets/img/hero/image (2).svg" alt="" width="94px" height="92px">
-                    <img style="border-radius:10px ; height: 92px;" class="mx-2" src="assets/img/hero/drmostafa2.jpg" alt="" width="94px">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <img style="border-radius:20px ;" src="assets/img/hero/drmostafajpg.jpg" class="w-100" alt="">
             </div>
         </div>
-    </div>
-   </section>
+    </section>
     <!--==============================
     Service Area
     ==============================-->
@@ -875,7 +874,7 @@
             <div class="container">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto text-center text-md-end">
-                        <p class="mb-0 text-white">Copyright <i class="fal fa-copyright"></i> 2024 <a class="text-white" href="index.html">Medixi</a>. All rights reserved by <a class="text-white" href="https://themeforest.net/user/vecuro_themes">Vecuro</a>.</p>
+                        <p class="mb-0 text-white">Copyright <i class="fal fa-copyright"></i> 2024 <a class="text-white" href="https://brmja.tech/">brmja.tech</a>. All rights reserved by <a class="text-white" href="https://themeforest.net/user/vecuro_themes">Vecuro</a>.</p>
                     </div>
                     <div class="col-auto d-none d-md-block">
                         <ul class="footer-bottom-menu">
@@ -933,6 +932,11 @@
     <script src="assets/js/ajax-mail.js"></script>
     <!-- Main Js File -->
     <script src="assets/js/main.js"></script>
+    <script>
+        function changeImage(imageUrl) {
+            document.getElementById('main-image').src = imageUrl;
+        }
+    </script>
 
 </body>
 

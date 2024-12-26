@@ -18320,6 +18320,14 @@ body {
 .space-md-bottom {
   padding-bottom: 100px;
 }
+img.clickable {
+  cursor: pointer;
+}
+
+img.clickable:hover {
+  opacity: 0.8;   
+  transition: opacity 0.3s ease;
+}
 
 /* Medium devices */
 @media (max-width: 992px) {
