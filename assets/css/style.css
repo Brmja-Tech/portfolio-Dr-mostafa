@@ -90,9 +90,9 @@ Version: 1.0.0
   --success-color: #28a745;
   --error-color: #dc3545;
   --border-color: rgba(0,0,0,0.10);
-  --title-font: "Quicksand", sans-serif;
-  --body-font: "Roboto", sans-serif;
-  --subtitle-font: "Dancing Script", cursive;
+  --title-font: "Cairo", serif;
+  --body-font: "Cairo", serif;
+  --subtitle-font: "Cairo", serif;
   --icon-font: "Font Awesome 5 Pro";
   --flaticon: "Flaticon";
   --ripple-ani-duration: 5s;
@@ -18328,6 +18328,8 @@ img.clickable:hover {
   opacity: 0.8;   
   transition: opacity 0.3s ease;
 }
+
+
 
 /* Medium devices */
 @media (max-width: 992px) {
