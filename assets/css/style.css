@@ -18334,6 +18334,71 @@ img.clickable:hover {
   transition: opacity 0.3s ease;
 }
 
+/* الشاشات المتوسطة (أقل من 768px) */
+@media (max-width: 768px) {
+  .blog-section {
+      height: 300px;
+  }
+
+  .blog-title {
+      font-size: 1.5rem;
+      line-height: 1.4;
+  }
+}
+
+/* الشاشات الصغيرة (أقل من 576px) */
+@media (max-width: 576px) {
+  .blog-section {
+      height: 250px;
+  }
+
+  .blog-title {
+      font-size: 1.3rem;
+      line-height: 1.3;
+      padding: 0 15px; /* زيادة الهوامش الداخلية لتناسب النص */
+  }
+}
+
+/* الشاشات الأصغر من 480px */
+@media (max-width: 480px) {
+  .blog-section {
+      height: 200px;
+  }
+
+  .blog-title {
+      font-size: 1.1rem;
+      line-height: 1.2;
+      padding: 0 10px; /* منع التصاق النص بالحواف */
+  }
+}
+
+/* الشاشات الأصغر من 375px */
+@media (max-width: 375px) {
+  .blog-section {
+      height: 180px;
+  }
+
+  .blog-title {
+      font-size: 1rem;
+      line-height: 1.2;
+      padding: 0 8px;
+  }
+}
+
+/* الشاشات الأصغر من 320px */
+@media (max-width: 320px) {
+  .blog-section {
+      height: 160px;
+  }
+
+  .blog-title {
+      font-size: 0.9rem;
+      line-height: 1.1;
+      padding: 0 5px;
+  }
+}
+
+
 
 
 /* Medium devices */
