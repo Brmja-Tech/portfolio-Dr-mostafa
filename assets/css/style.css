@@ -70,6 +70,10 @@ Version: 1.0.0
    01. Theme Base
 ==================================*/
 /*------------------- 1.1. Variable-------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+
 :root {
   --theme-color: #07ccec;
   --theme-color2: #2cb624;
@@ -2337,6 +2341,7 @@ textarea.form-control.is-invalid {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+          text-align: justify;
 }
 
 .badge {
