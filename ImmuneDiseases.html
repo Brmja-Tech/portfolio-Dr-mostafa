@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Medixi - Medical and Health Care HTML Template - Services Details</title>
+    <title>Dr. Mostafa Saber</title>
     <meta name="author" content="Vecuro">
     <meta name="description" content="Medixi - Medical and Health Care HTML Template">
     <meta name="keywords" content="Medixi - Medical and Health Care HTML Template">
@@ -86,10 +86,10 @@
         <div class="mobile-logo">
             <a href="index.html"><img src="assets/img/dr logo[1].png" alt="Medixi"></a>
         </div>
-        <form action="#" class="mobile-menu-form">
-            <input type="text" class="form-control" placeholder="بحث...">
+        <form  class="mobile-menu-form" onsubmit="handleSearch(event)">
+            <input type="text" class="form-control search-input" placeholder="بحث..." />
             <button type="submit"><i class="fas fa-search"></i></button>
-        </form>
+          </form>
         <div class="vs-mobile-menu">
             <ul>
                 <li>
@@ -186,13 +186,20 @@
     <!--==============================
     Popup Search Box
     ============================== -->
-    <div class="popup-search-box d-none d-lg-block  ">
-        <button class="searchClose border-theme text-theme"><i class="fal fa-times"></i></button>
-        <form action="#">
-            <input type="text" class="border-theme" placeholder="ماذا تبحث عن">
-            <button type="submit"><i class="fal fa-search"></i></button>
+    <div class="popup-search-box d-none d-lg-block">
+        <button class="searchClose border-theme text-theme">
+          <i class="fal fa-times"></i>
+        </button>
+        <form onsubmit="handleSearch(event)">
+          <input
+            type="text"
+            id="search-input"
+            class="border-theme search-input"
+            placeholder="ماذا تبحث عن"
+          />
+          <button type="submit"><i class="fal fa-search"></i></button>
         </form>
-    </div>
+      </div>
     <!--==============================
         Header Area
     ==============================-->
@@ -351,17 +358,17 @@
     <!--==============================
 			Footer Area
 	==============================-->
-    <footer class="footer-wrapper footer-layout1" data-bg-src="assets/img/bg/bg-shape-4.png">
+    <footer class="footer-wrapper footer-layout1 " data-bg-src="assets/img/bg/bg-shape-4.png">
         <div class="container">
             <div class="footer-top">
                 <div class="row align-items-center justify-content-between">
-                    <div class="col-sm-6 col-md-auto text-center text-sm-start">
-                        <div class="footer1-logo bg-white">
-                            <a href="index.html"><img style="width: 300px; max-width: 100%;" src="assets/img/dr logo[1].png" alt="Logo"></a>
+                    <div class="col-sm-6 col-md-auto text-center text-sm-start ">
+                        <div class="footer1-logo ">
+                            <a href="index.html"><img style="width: 300px; max-width: 100%;" src="assets/img/dr logo.png" alt="dr mostafa logo"></a>
                         </div>
                     </div>
-                    <div class=" col-sm-6 col-md-auto pt-20 pt-sm-0 pb-20 pb-sm-0 text-center text-sm-end">
-                        <div class="footer-social">
+                    <div class=" col-sm-6 col-md-auto pt-20 pt-sm-0 pb-20 pb-sm-0 text-center text-sm-end d-flex justify-content-center flex-wrap ">
+                        <div class="footer-social d-flex ">
                             
                                 <a href="https://www.facebook.com/drmostafasaber83/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             
@@ -390,16 +397,8 @@
                             <h3 class="widget_title">عن الطبيب</h3>
                             <div class="vs-widget-about">
                                 <p>إستشاري طب الأسرة وعضو الكلية الملكية لأطباءالأسرة لندن, بكالوريوس الطب والجراحة جامعة القاهرة (كلية الطب قصر العيني) MRCGP UK , MRCGP int .</p>
-                                <h4><a class="text-theme hover-white" href="tel:693232512456"><i class="fas fa-phone-volume me-2 pe-1"></i>01011111111</a></h4>
-                                <div class="d-flex mt-3 pt-1">
-                                    <div class="avater-small mr-20">
-                                        <img src="assets/img/author/author-2-3.jpg" alt="Avater Image">
-                                    </div>
-                                    <div class="media-body align-self-center">
-                                        <h5 class="mb-0 font-body lh-1 text-white">Dr.Mostafa Sabar</h5>
-                                        <span class="text-theme fs-xs lh-1">إستشاري طب الأسرة.</span>
-                                    </div>
-                                </div>
+                                <h4><a class="text-theme hover-white" href="tel:01141734776"><i class="fas fa-phone-volume me-2 pe-1"></i>01141734776</a></h4>
+                                
                             </div>
                         </div>
                     </div>
@@ -448,13 +447,13 @@
                                     </tr>
                                 </table>
                             </div>
-                            
+                        
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+       
     </footer>
 
 
@@ -497,6 +496,21 @@
     <script src="assets/js/vscustom-carousel.min.js"></script>
     <!-- Form Js -->
     <script src="assets/js/ajax-mail.js"></script>
+    <script>
+        function handleSearch(event) {
+          event.preventDefault(); // Prevent the default form submission
+          const searchValue = document
+            .getElementById("search-input")
+            .value.trim();
+          if (searchValue) {
+            // Redirect to the departments page with the search query as a URL parameter
+            window.location.href = `service.html?search=${encodeURIComponent(
+              searchValue
+            )}`;
+          }
+        }
+          
+      </script>
     <!-- Main Js File -->
     <script src="assets/js/main.js"></script>
 
