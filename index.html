@@ -303,7 +303,7 @@
               >
                 اتصل الآن <i class="fas fa-arrow-alt-circle-left ms-3"></i>
               </button>
-
+    
               <button
                 onclick="document.getElementById('section-id').scrollIntoView({ behavior: 'smooth' });"
                 style="
@@ -321,18 +321,19 @@
               <img
                 class="mx-2 clickable"
                 src="assets/img/hero/image (1).svg"
+                onclick="changeImage(this, 'assets/img/hero/image (1).svg')"
                 alt=""
                 width="94px"
                 height="92px"
-                onclick="changeImage(this, 'assets/img/hero/image (1).svg')"
               />
               <img
                 class="mx-2 clickable active"
                 src="assets/img/hero/image (2).svg"
+                onclick="changeImage(this, 'assets/img/hero/image (2).svg')"
+
                 alt=""
                 width="94px"
                 height="92px"
-                onclick="changeImage(this, 'assets/img/hero/image (2).svg')"
               />
               <img
                 style="border-radius: 10px; height: 92px"
@@ -341,6 +342,7 @@
                 alt=""
                 width="94px"
                 onclick="changeImage(this, 'assets/img/hero/drmostafa2.jpg')"
+
               />
             </div>
           </div>
@@ -349,7 +351,7 @@
               id="main-image"
               style="border-radius: 20px"
               src="assets/img/hero/drmostafajpg.jpg"
-              class="w-100"
+              class="w-100 container-background"
               alt=""
             />
           </div>
@@ -779,7 +781,7 @@
                   </div>
                   <div class="col-xl-6 form-group">
                     <input
-                      type="tel"
+                      type="text"
                       class="form-control style2"
                       placeholder="رقم الهاتف"
                     />
@@ -1355,6 +1357,39 @@
           updateCount();
         });
       });
+
+        // Image sources to rotate
+  const images = [
+    "assets/img/hero/image (1).svg",
+    "assets/img/hero/drmostafajpg.jpg",
+    "assets/img/hero/drmostafa2.jpg"
+  ];
+
+
+  const thumbnails = document.querySelectorAll(".aboutImags-container img");
+
+
+  let currentIndex = 0;
+
+  function changeMainImage() {
+    const mainImage = document.getElementById("main-image");
+
+
+    currentIndex = (currentIndex + 1) % images.length; 
+    mainImage.src = images[currentIndex];
+
+
+    thumbnails.forEach((thumbnail, index) => {
+      if (index === currentIndex) {
+        thumbnail.classList.add("active");
+      } else {
+        thumbnail.classList.remove("active");
+      }
+    });
+  }
+
+  setInterval(changeMainImage, 2000);
+  startAutoRotation();
 
       function changeImage(clickAbleImg, imageUrl) {
         document.getElementById("main-image").src = imageUrl;
