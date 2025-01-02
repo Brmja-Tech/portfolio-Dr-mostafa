@@ -17660,11 +17660,25 @@ img.clickable:hover {
     justify-content: center;
     margin-bottom: 20px;
   }
-
 }
 .accordion-button:not(.collapsed) {
   box-shadow: none;
 }
 ul {
   list-style: none;
+}
+@media (max-width: 300px) {
+  .header1-logo  a img {
+    width: 170px !important;
+  }
+
+.vs-menu-toggle{
+  width: 39px;
+  height: 39px;
+}
+.vs-menu-toggle i {
+  font-size: 20px;
+}
+
+
 }
