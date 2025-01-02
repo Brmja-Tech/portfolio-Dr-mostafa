@@ -87,7 +87,7 @@
                 <a href="index.html"><img src="assets/img/dr logo[1].png" alt="Medixi"></a>
             </div>
             <form  class="mobile-menu-form" onsubmit="handleSearch(event)">
-                <input type="text" class="form-control search-input" placeholder="بحث..." />
+                <input type="text" class="form-control search-input-2" placeholder="بحث..." />
                 <button type="submit"><i class="fas fa-search"></i></button>
               </form>
             <div class="vs-mobile-menu">
@@ -194,7 +194,7 @@
           <input
             type="text"
             id="search-input"
-            class="border-theme search-input"
+            class="border-theme search-input-1"
             placeholder="ماذا تبحث عن"
           />
           <button type="submit"><i class="fal fa-search"></i></button>
@@ -798,6 +798,28 @@
     <script src="assets/js/vscustom-carousel.min.js"></script>
     <!-- Form Js -->
     <script src="assets/js/ajax-mail.js"></script>
+    <script>
+            function handleSearch(event) {
+        event.preventDefault();
+
+        const searchInput1 = document
+          .querySelector(".search-input-1")
+          .value.trim();
+        const searchInput2 = document
+          .querySelector(".search-input-2")
+          .value.trim();
+
+        if (searchInput1 || searchInput2) {
+          // Build the query parameters
+          const params = new URLSearchParams();
+
+          searchInput1 && params.append("search", searchInput1);
+          searchInput2 && params.append("search", searchInput2);
+
+          window.location.href = `service.html?${params.toString()}`;
+        }
+      }
+    </script>
     <!-- Main Js File -->
     <script src="assets/js/main.js"></script>
 

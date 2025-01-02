@@ -93,12 +93,8 @@
             ><img src="assets/img/dr logo[1].png" alt="Medixi"
           /></a>
         </div>
-        <form class="mobile-menu-form" onsubmit="handleSearch(event)">
-          <input
-            type="text"
-            class="form-control search-input"
-            placeholder="بحث..."
-          />
+        <form  class="mobile-menu-form" onsubmit="handleSearch(event)">
+          <input type="text" class="form-control search-input-2" placeholder="بحث..." />
           <button type="submit"><i class="fas fa-search"></i></button>
         </form>
         <div class="vs-mobile-menu">
@@ -135,7 +131,7 @@
         <input
           type="text"
           id="search-input"
-          class="border-theme search-input"
+          class="border-theme search-input-1"
           placeholder="ماذا تبحث عن"
         />
         <button type="submit"><i class="fal fa-search"></i></button>
@@ -828,15 +824,23 @@
     <script src="assets/js/main.js"></script>
     <script>
       function handleSearch(event) {
-        event.preventDefault(); // Prevent the default form submission
-        const searchValue = document
-          .getElementById("search-input")
+        event.preventDefault();
+
+        const searchInput1 = document
+          .querySelector(".search-input-1")
           .value.trim();
-        if (searchValue) {
-          // Redirect to the departments page with the search query as a URL parameter
-          window.location.href = `service.html?search=${encodeURIComponent(
-            searchValue
-          )}`;
+        const searchInput2 = document
+          .querySelector(".search-input-2")
+          .value.trim();
+
+        if (searchInput1 || searchInput2) {
+          // Build the query parameters
+          const params = new URLSearchParams();
+
+          searchInput1 && params.append("search", searchInput1);
+          searchInput2 && params.append("search", searchInput2);
+
+          window.location.href = `service.html?${params.toString()}`;
         }
       }
 
