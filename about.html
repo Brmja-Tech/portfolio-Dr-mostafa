@@ -331,7 +331,7 @@
                             <a href="assets/viedo/WhatsApp Video 2024-12-23 at 16.37.18_5e1468bd.mp4" class="popup-video play-btn style2 position-center"><i class="fas fa-play"></i></a>
                             <div class="exp-box-bottom bg-white">
                                 <div class="exp-year text-theme">
-                                    <span class="counter">20</span>+
+                                    <span class="counter" data-target="20">0</span>+
                                 </div>
                                 <p class="exp-text text-title mb-0">سنة خبرة</p>
                             </div>
@@ -375,7 +375,7 @@
                         <div class="d-xl-flex text-center text-xl-start skill-box">
                             <span class="ripple-icon hover-style2  align-self-start mb-20 mb-xl-0 mr-20"><i class="flaticon-discuss"></i></span>
                             <div class="media-body">
-                                <h2 class="mt-n2 mb-0 text-theme">20+</h2>
+                                <h2 class="mt-n2 mb-0 text-theme counter" data-target="20">20+</h2>
                                 <p class="text-title fs-md fw-medium mt-1 mt-xl-0 mb-2 mb-xl-2">سنوات من الخبرة</p>
                                 <p class="fs-xs mb-0">تعد سنوات الخبرة التي يكتسبها الطبيب من العوامل الأساسية التي تؤثر بشكل كبير في جودة رعايته الصحية للمرضى. مع مرور السنوات</p>
                             </div>
@@ -385,7 +385,7 @@
                         <div class="d-xl-flex text-center text-xl-start skill-box">
                             <span class="ripple-icon  hover-style2 align-self-start mb-20 mb-xl-0 mr-20"><i class="flaticon-medical-equipment"></i></span>
                             <div class="media-body">
-                                <h2 class="mt-n2 mb-0 text-theme">20+</h2>
+                                <h2 class="mt-n2 mb-0 text-theme counter" data-target="20">20+</h2>
                                 <p class="text-title fs-md fw-medium mt-1 mt-xl-0 mb-2 mb-xl-2">طبيب ذو خبرة</p>
                                 <p class="fs-xs mb-0">يمتلك هذا الطبيب القدرة على تشخيص الحالات بدقة وتقديم العلاج الأمثل استنادًا إلى خبراته الواسعة وفهمه العميق لأحدث التطورات الطبية</p>
                             </div>
@@ -395,7 +395,7 @@
                         <div class="d-xl-flex text-center text-xl-start skill-box">
                             <span class="ripple-icon  hover-style2 align-self-start mb-20 mb-xl-0 mr-20"><i class="flaticon-healthcare"></i></span>
                             <div class="media-body">
-                                <h2 class="mt-n2 mb-0 text-theme">200+</h2>
+                                <h2 class="mt-n2 mb-0 text-theme counter" data-target="200">200+</h2>
                                 <p class="text-title fs-md fw-medium mt-1 mt-xl-0 mb-2 mb-xl-2">المرضى السعداء</p>
                                 <p class="fs-xs mb-0">يعتبر سعادة المرضى أحد المؤشرات الأساسية لنجاح النظام الصحي أو الطبيب في تقديم الرعاية الصحية. عندما يشعر المرضى بالراحة والاطمئنان في بيئة العلاج</p>
                             </div>
@@ -819,6 +819,32 @@
           window.location.href = `service.html?${params.toString()}`;
         }
       }
+      document.addEventListener("DOMContentLoaded", () => {
+        const counters = document.querySelectorAll(".counter");
+
+        counters.forEach((counter) => {
+          const updateCount = () => {
+            const target =
+              +counter.getAttribute("data-target") || +counter.textContent; // Target value
+            const speed = 100; // Adjust this value to change animation speed
+            const increment = Math.ceil(target / speed);
+            let current = 0;
+
+            const countInterval = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                counter.textContent = target; // Set to the final value
+                clearInterval(countInterval);
+              } else {
+                counter.textContent = current;
+              }
+            }, 200); // Adjust this value for smoothness
+          };
+
+          updateCount();
+        });
+      });
+
     </script>
     <!-- Main Js File -->
     <script src="assets/js/main.js"></script>

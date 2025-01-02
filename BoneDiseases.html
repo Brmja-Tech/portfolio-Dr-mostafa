@@ -330,7 +330,7 @@
                                 </a>                                
                                 <div class="exp-box-bottom bg-white">
                                     <div class="exp-year text-theme">
-                                        <span class="counter">20</span>+
+                                        <span class="counter" data-target="20">0</span>+
                                     </div>
                                     <p class="exp-text text-title mb-0">سنة خبرة</p>
                                 </div>
@@ -521,6 +521,32 @@
         }
       }
           
+      document.addEventListener("DOMContentLoaded", () => {
+        const counters = document.querySelectorAll(".counter");
+
+        counters.forEach((counter) => {
+          const updateCount = () => {
+            const target =
+              +counter.getAttribute("data-target") || +counter.textContent; // Target value
+            const speed = 100; // Adjust this value to change animation speed
+            const increment = Math.ceil(target / speed);
+            let current = 0;
+
+            const countInterval = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                counter.textContent = target; // Set to the final value
+                clearInterval(countInterval);
+              } else {
+                counter.textContent = current;
+              }
+            }, 200); // Adjust this value for smoothness
+          };
+
+          updateCount();
+        });
+      });
+
       </script>
     <!-- Main Js File -->
     <script src="assets/js/main.js"></script>
